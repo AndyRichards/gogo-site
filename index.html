@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoGo | From Screen to Supermarket—Smarter.</title>
+    <title>GoGo Groceries | From Screen to Supermarket—Smarter.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -12,11 +12,12 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            scroll-behavior: smooth;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
@@ -29,7 +30,7 @@
         }
 
         .app-shadow {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
 
         .high-density-grid {
@@ -37,9 +38,14 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
+
+        .hero-bg {
+            background-image: radial-gradient(circle at 2px 2px, #e2e8f0 1px, transparent 0);
+            background-size: 40px 40px;
+        }
     </style>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-900 hero-bg">
 
     <!-- Compact Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-card">
@@ -50,8 +56,11 @@
                 </div>
                 <span class="text-lg font-extrabold tracking-tight text-slate-800">GoGo <span class="text-orange-500 font-semibold italic text-sm">Groceries</span></span>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="#login" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors">Log In</a>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex gap-6 text-sm font-bold text-slate-500">
+                    <a href="#features" class="hover:text-orange-500 transition-colors">Features</a>
+                    <a href="#pricing" class="hover:text-orange-500 transition-colors">Pricing</a>
+                </div>
                 <button class="gogo-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transform active:scale-95 transition-all">
                     Start Trial
                 </button>
@@ -59,129 +68,191 @@
         </div>
     </nav>
 
-    <!-- Hero: Fast & Punchy -->
-    <section class="pt-28 pb-16 px-4">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4">
         <div class="max-w-6xl mx-auto text-center">
             <div class="inline-block px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
-                14-Day Free Trial • No Card Required
+                14-Day Free Trial • No Credit Card Required
             </div>
-            <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
+            <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
                 Scan recipes. Sum totals.<br>
                 <span class="text-orange-500">GoGo Shopping.</span>
             </h1>
-            <p class="text-lg text-slate-500 max-w-xl mx-auto mb-10 leading-relaxed font-medium">
-                Stop juggling messy notes. <strong>GoGo</strong> turns any photo or link into a consolidated shopping list in seconds.
+            <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                Stop juggling messy notes and duplicate ingredients. <strong>GoGo</strong> turns any recipe—from a photo of your grandma's cookbook to your favorite Instagram Reel—into a consolidated shopping list in seconds.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
-                <button class="gogo-gradient text-white px-10 py-4 rounded-2xl text-lg font-black shadow-2xl hover:brightness-110 transition-all w-full sm:w-auto">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20">
+                <button class="gogo-gradient text-white px-10 py-4 rounded-2xl text-lg font-black shadow-2xl hover:brightness-110 hover:-translate-y-1 transition-all w-full sm:w-auto">
                     Get GoGo Now
                 </button>
-                <p class="text-xs text-slate-400 font-semibold italic">
-                    <i class="fas fa-bolt text-orange-400 mr-1"></i> Lifetime access $4.99 after trial
-                </p>
+                <div class="flex flex-col items-start sm:items-center">
+                    <p class="text-xs text-slate-400 font-semibold italic">
+                        <i class="fas fa-bolt text-orange-400 mr-1"></i> Lifetime access $4.99 after trial
+                    </p>
+                </div>
             </div>
 
-            <!-- App UI Preview (High Density Look) -->
+            <!-- App UI Preview -->
             <div class="max-w-4xl mx-auto relative px-2">
-                <div class="bg-slate-900 rounded-[2.5rem] p-4 pt-10 pb-4 app-shadow relative z-10 border-4 border-slate-800">
-                    <!-- Fake Notch -->
-                    <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-800 rounded-full"></div>
+                <div class="bg-slate-900 rounded-[3rem] p-4 pt-12 pb-6 app-shadow relative z-10 border-8 border-slate-800">
+                    <!-- Notch -->
+                    <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-7 bg-slate-800 rounded-full"></div>
                     
-                    <div class="bg-white rounded-[1.5rem] overflow-hidden">
+                    <div class="bg-white rounded-[2rem] overflow-hidden min-h-[400px]">
                         <!-- Mock App Content -->
                         <div class="p-6 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
-                            <h4 class="font-black text-xl">My GoGo List</h4>
-                            <span class="text-xs font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded-md">3 Recipes</span>
-                        </div>
-                        <div class="p-4 space-y-3">
-                            <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400"><i class="fas fa-carrot"></i></div>
-                                    <span class="font-bold text-sm">Carrots</span>
-                                </div>
-                                <span class="text-orange-500 font-black">x 8</span>
+                            <div>
+                                <h4 class="font-black text-2xl text-slate-800">My GoGo List</h4>
+                                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Shopping Trip: Sunday Morning</p>
                             </div>
-                            <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400"><i class="fas fa-egg"></i></div>
-                                    <span class="font-bold text-sm">Large Eggs</span>
+                            <span class="text-xs font-bold bg-orange-100 text-orange-600 px-3 py-1.5 rounded-lg">3 Recipes Added</span>
+                        </div>
+                        <div class="p-4 space-y-4">
+                            <!-- Item 1 -->
+                            <div class="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-500 text-lg">
+                                        <i class="fas fa-carrot"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold text-slate-700">Carrots</span>
+                                        <span class="text-[10px] text-slate-400 font-bold uppercase">Produce Aisle</span>
+                                    </div>
                                 </div>
-                                <span class="text-orange-500 font-black">x 12</span>
+                                <div class="text-right">
+                                    <span class="text-orange-500 font-black text-xl">x 8</span>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-500 text-lg">
+                                        <i class="fas fa-egg"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold text-slate-700">Large Eggs</span>
+                                        <span class="text-[10px] text-slate-400 font-bold uppercase">Dairy Aisle</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-orange-500 font-black text-xl">x 12</span>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border border-slate-100">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-red-500 text-lg">
+                                        <i class="fas fa-cheese"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block font-bold text-slate-700">Parmesan</span>
+                                        <span class="text-[10px] text-slate-400 font-bold uppercase">Chilled Aisle</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-orange-500 font-black text-xl">400g</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Background decorative elements -->
-                <div class="absolute -top-10 -left-10 w-48 h-48 bg-orange-200/40 rounded-full blur-3xl -z-0"></div>
-                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-slate-200/40 rounded-full blur-3xl -z-0"></div>
+                <!-- Background decor -->
+                <div class="absolute -top-20 -left-20 w-80 h-80 bg-orange-200/30 rounded-full blur-[100px] -z-0"></div>
+                <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-slate-200/30 rounded-full blur-[100px] -z-0"></div>
             </div>
         </div>
     </section>
 
-    <!-- App Capabilities: Modern & Dense -->
-    <section id="features" class="py-20 bg-slate-900 text-white">
+    <!-- Capabilities Grid -->
+    <section id="features" class="py-24 bg-slate-900 text-white">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="mb-16">
-                <h2 class="text-3xl font-black mb-4 tracking-tight">App Capabilities</h2>
-                <div class="w-12 h-1.5 gogo-orange rounded-full"></div>
+            <div class="mb-16 text-center md:text-left">
+                <h2 class="text-4xl font-black mb-4 tracking-tight uppercase">App Capabilities</h2>
+                <div class="w-20 h-2 gogo-orange rounded-full mx-auto md:mx-0"></div>
             </div>
 
             <div class="high-density-grid">
                 <!-- Cap 1 -->
-                <div class="p-6 rounded-3xl bg-slate-800/50 border border-slate-700">
-                    <i class="fas fa-camera text-orange-500 text-2xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">AI Extraction</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Turn Instagram Reels, URLs, or photos of handwritten cards into a clean list in 2 seconds.</p>
+                <div class="p-8 rounded-[2rem] bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Extraction</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">Turn Instagram Reels, recipe URLs, or old family cookbook photos into a clean list in under 2 seconds.</p>
                 </div>
                 <!-- Cap 2 -->
-                <div class="p-6 rounded-3xl bg-slate-800/50 border border-slate-700">
-                    <i class="fas fa-calculator text-orange-500 text-2xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Smart Totals</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">GoGo automatically sums quantities (e.g. 200g + 300g = 500g) so you never overbuy.</p>
+                <div class="p-8 rounded-[2rem] bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Totals</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">GoGo automatically handles the math. It sums identical items from different recipes so you never buy duplicates.</p>
                 </div>
                 <!-- Cap 3 -->
-                <div class="p-6 rounded-3xl bg-slate-800/50 border border-slate-700">
-                    <i class="fas fa-bookmark text-orange-500 text-2xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Persistent Staples</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Keep your weekly "must-haves" (milk, eggs, bread) one tap away from your main list.</p>
+                <div class="p-8 rounded-[2rem] bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Persistent Staples</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">Add your recurring essentials (milk, eggs, bread) with a single tap. They’re always ready when you are.</p>
                 </div>
                 <!-- Cap 4 -->
-                <div class="p-6 rounded-3xl bg-slate-800/50 border border-slate-700">
-                    <i class="fas fa-route text-orange-500 text-2xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Aisle Sorting</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Items are auto-grouped by category (Produce, Dairy, etc.) to get you out of the store faster.</p>
+                <div class="p-8 rounded-[2rem] bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aisle Navigation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">GoGo auto-groups your list by aisle. Walk the store in one smooth loop without doubling back.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Call -->
-    <section class="py-24 px-4 bg-white text-center">
-        <div class="max-w-xl mx-auto glass-card p-12 rounded-[3rem] app-shadow border-2 border-slate-50">
-            <h2 class="text-3xl font-black mb-4">Ready to GoGo?</h2>
-            <p class="text-slate-500 font-medium mb-8">Test every feature for 14 days. No card required. Unlock the app for life for a single payment.</p>
-            <div class="text-5xl font-black text-slate-900 mb-2">$4.99</div>
-            <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-10">One-Time Lifetime Access</p>
-            <button class="gogo-gradient text-white w-full py-5 rounded-2xl text-xl font-black shadow-xl hover:scale-105 transition-transform">
+    <!-- Pricing / Conversion -->
+    <section id="pricing" class="py-24 px-4 bg-white overflow-hidden relative">
+        <div class="max-w-xl mx-auto glass-card p-12 md:p-16 rounded-[3.5rem] app-shadow border-4 border-slate-50 text-center relative z-10">
+            <h2 class="text-4xl font-black mb-6 tracking-tight">Ready to GoGo?</h2>
+            <p class="text-slate-500 font-semibold mb-10 leading-relaxed">
+                Start your 14-day trial now. After that, unlock **GoGo Groceries** for life with a single, one-off payment. No monthly recurring fees.
+            </p>
+            <div class="flex flex-col items-center mb-10">
+                <div class="text-7xl font-black text-slate-900">$4.99</div>
+                <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] mt-2">One-Time Lifetime Access</p>
+            </div>
+            <button class="gogo-gradient text-white w-full py-6 rounded-2xl text-xl font-black shadow-2xl hover:scale-[1.02] active:scale-95 transition-all">
                 Start My Free Trial
             </button>
+            <p class="mt-6 text-xs text-slate-400 font-bold uppercase tracking-wider">No credit card required today</p>
         </div>
+        <!-- Abstract bg shapes -->
+        <div class="absolute top-1/2 left-0 w-64 h-64 gogo-orange opacity-5 rounded-full -translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        <div class="absolute top-1/2 right-0 w-64 h-64 gogo-orange opacity-5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
     </section>
 
-    <!-- Simple Footer -->
-    <footer class="py-12 border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2 grayscale opacity-70">
-                <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-[10px]">
-                    <i class="fas fa-shopping-basket"></i>
+    <!-- Compact Footer -->
+    <footer class="py-16 border-t border-slate-100 bg-slate-50/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-[10px]">
+                            <i class="fas fa-shopping-basket"></i>
+                        </div>
+                        <span class="text-sm font-black text-slate-900 uppercase tracking-tighter">GoGo Groceries</span>
+                    </div>
+                    <p class="text-xs text-slate-400 font-bold max-w-xs uppercase tracking-widest leading-loose">
+                        Helping you shop smarter since 2026. Built for speed.
+                    </p>
                 </div>
-                <span class="text-sm font-black text-slate-900">GoGo Groceries</span>
+                <div class="flex gap-8 text-xs font-black text-slate-400 uppercase tracking-widest">
+                    <a href="#" class="hover:text-orange-500 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-orange-500 transition-colors">Support</a>
+                    <a href="#" class="hover:text-orange-500 transition-colors">Terms</a>
+                </div>
             </div>
-            <p class="text-xs text-slate-400 font-medium">&copy; 2026 GoGo Groceries. Built for speed.</p>
-            <div class="flex gap-4 text-xs font-bold text-slate-400">
-                <a href="#" class="hover:text-orange-500 transition-colors">Privacy</a>
-                <a href="#" class="hover:text-orange-500 transition-colors">Support</a>
+            <div class="mt-16 pt-8 border-t border-slate-100 text-center text-[10px] text-slate-300 font-bold uppercase tracking-[0.3em]">
+                &copy; 2026 GoGo Groceries. Pay once. Use forever.
             </div>
         </div>
     </footer>
